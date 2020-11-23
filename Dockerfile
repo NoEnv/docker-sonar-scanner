@@ -14,8 +14,8 @@ RUN apt-get update \
   && apt-get install -y unzip \
   && unzip sonar-scanner-cli-${SONAR_SCANNER_VERSION}.zip \
 	&& ln -s /sonar-scanner-${SONAR_SCANNER_VERSION} /sonar-scanner \
-	&& mv -f /sonar-scanner/conf/sonar-scanner.properties /drone/volume/ \
 	&& mkdir -p /data /drone/volume \
+  && mv -f /sonar-scanner/conf/sonar-scanner.properties /drone/volume/ \
 	&& ln -s /drone/volume/sonar-scanner.properties /sonar-scanner/conf/ \
   && rm -rf rm -rf /var/lib/apt/lists/* sonar-scanner-cli-*.zip
 

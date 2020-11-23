@@ -10,7 +10,7 @@ ENV PATH $PATH:/sonar-scanner/bin
 
 ADD "https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}.zip" /
 
-RUN RUN apt-get update \
+RUN apt-get update \
   && apt-get install -y unzip \
   && unzip sonar-scanner-cli-${SONAR_SCANNER_VERSION}.zip \
 	&& ln -s /sonar-scanner-${SONAR_SCANNER_VERSION} /sonar-scanner \

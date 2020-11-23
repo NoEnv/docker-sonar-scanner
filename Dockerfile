@@ -16,10 +16,10 @@ RUN apt-get update \
   && tar -xJf "node-v$NODE_VERSION-linux-x64.tar.xz" -C /usr/local --strip-components=1 --no-same-owner \
 	&& mkdir -p /data /drone/volume \
   && ln -s /sonar-scanner-${SONAR_SCANNER_VERSION} /sonar-scanner \
+  && mv -f /sonar-scanner/conf/sonar-scanner.properties /drone/volume/ \
 	&& ln -s /drone/volume/sonar-scanner.properties /sonar-scanner/conf/ \
   && ln -s /docker-java-home/bin/java /usr/local/bin/ \
   && ln -s /sonar-scanner/bin/sonar-scanner /usr/local/bin/ \
-  && mv -f /sonar-scanner/conf/sonar-scanner.properties /drone/volume/ \
   && rm -rf rm -rf /var/lib/apt/lists/* sonar-scanner-cli-*.zip
 
 WORKDIR /data

@@ -1,11 +1,11 @@
 FROM noenv/openjdk
 
 LABEL maintainer "NoEnv"
-LABEL version "4.5.0"
+LABEL version "4.6.0"
 LABEL description "SonarQube Scanner as Docker Image"
 
-ENV SONAR_SCANNER_VERSION 4.5.0.2216
-ENV NODE_VERSION 15.2.1
+ENV SONAR_SCANNER_VERSION 4.6.0.2311
+ENV NODE_VERSION 15.6.0
 ENV JAVA_HOME /docker-java-home
 
 RUN apt-get update \

@@ -1,4 +1,6 @@
 [![Docker Pulls](https://badgen.net/docker/pulls/noenv/sonar-scanner)](https://hub.docker.com/r/noenv/sonar-scanner)
+[![Quay.io Enabled](https://badgen.net/badge/quay%20pulls/enabled/green)](https://quay.io/repository/noenv/sonar-scanner)
+[![build](https://github.com/NoEnv/docker-sonar-scanner/actions/workflows/build.yml/badge.svg)](https://github.com/NoEnv/docker-sonar-scanner/actions/workflows/build.yml)
 
 ## docker-sonar-scanner
 

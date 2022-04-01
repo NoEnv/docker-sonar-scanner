@@ -9,24 +9,24 @@ ENV NODE_VERSION 17.7.2
 ENV JAVA_HOME /docker-java-home
 
 RUN apt-get update && \
-  apt-get install -y xz-utils unzip curl && \
+  apt-get install -y unzip curl && \
   curl -fsSLo /tmp/sonar-scanner-cli.zip "https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}.zip" \
   unzip -q /tmp/sonar-scanner-cli.zip && \
   ARCH="$(dpkg --print-architecture)" && \
   case "${ARCH}" in \
      aarch64|arm64) \
-       NODE_BINARY_URL="https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-arm64.tar.xz"; \
+       NODE_BINARY_URL="https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-arm64.tar.gz"; \
        ;; \
      amd64|i386:x86-64) \
-       NODE_BINARY_URL="https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz"; \
+       NODE_BINARY_URL="https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz"; \
        ;; \
      *) \
        echo "Unsupported arch: ${ARCH}"; \
        exit 1; \
        ;; \
   esac; \
-  curl -fsSL /tmp/node-linux.tar.xz ${NODE_BINARY_URL} && \
-  tar -xJf /tmp/node-linux.tar.xz -C /usr/local --strip-components=1 --no-same-owner && \
+  curl -fsSLo /tmp/node-linux.tar.gz ${NODE_BINARY_URL} && \
+  tar -xf /tmp/node-linux.tar.gz -C /usr/local --strip-components=1 --no-same-owner && \
 	mkdir -p /data /drone/volume && \
   ln -s /sonar-scanner-${SONAR_SCANNER_VERSION} /sonar-scanner && \
   mv -f /sonar-scanner/conf/sonar-scanner.properties /drone/volume/ && \

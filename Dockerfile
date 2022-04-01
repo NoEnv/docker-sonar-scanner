@@ -10,7 +10,7 @@ ENV JAVA_HOME /docker-java-home
 
 RUN apt-get update && \
   apt-get install -y unzip curl && \
-  curl -fsSLo /tmp/sonar-scanner-cli.zip "https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}.zip" \
+  curl -fsSLo /tmp/sonar-scanner-cli.zip "https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}.zip" && \
   unzip -q /tmp/sonar-scanner-cli.zip && \
   ARCH="$(dpkg --print-architecture)" && \
   case "${ARCH}" in \

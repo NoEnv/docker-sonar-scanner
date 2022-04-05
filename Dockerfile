@@ -1,4 +1,4 @@
-FROM noenv/openjdk
+FROM noenv/openjdk:18.0.0
 
 LABEL maintainer "NoEnv"
 LABEL version "4.7.0"

@@ -4,7 +4,7 @@ LABEL maintainer "NoEnv"
 LABEL version "5.0.1"
 LABEL description "SonarQube Scanner as Docker Image"
 
-ENV SONAR_SCANNER_VERSION 5.0.1.3001
+ENV SONAR_SCANNER_VERSION 5.0.1.3006
 ENV NODE_VERSION 20.5.1
 ENV JAVA_HOME /docker-java-home
 

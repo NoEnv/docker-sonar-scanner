@@ -5,7 +5,7 @@ LABEL version "8.0.1"
 LABEL description "SonarQube Scanner as Docker Image"
 
 ENV SONAR_SCANNER_VERSION 8.0.1.6346
-ENV NODE_VERSION 25.6.1
+ENV NODE_VERSION 25.8.1
 ENV JAVA_HOME /docker-java-home
 
 RUN apt-get update && \

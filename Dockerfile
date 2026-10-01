@@ -9,7 +9,7 @@ ENV NODE_VERSION 26.2.0
 ENV JAVA_HOME /docker-java-home
 
 RUN apt-get update && \
-  apt-get install -y unzip curl && \
+  apt-get install -y unzip curl libatomic1 && \
   curl -fsSLo /tmp/sonar-scanner-cli.zip "https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}.zip" && \
   unzip -q /tmp/sonar-scanner-cli.zip && \
   ARCH="$(dpkg --print-architecture)" && \

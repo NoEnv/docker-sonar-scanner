@@ -33,7 +33,7 @@ RUN apt-get update && \
 	ln -s /drone/volume/sonar-scanner.properties /sonar-scanner/conf/ && \
   ln -s /docker-java-home/bin/java /usr/local/bin/ && \
   ln -s /sonar-scanner/bin/sonar-scanner /usr/local/bin/ && \
-  rm -rf rm -rf /var/lib/apt/lists/* /tmp/sonar-scanner-cli.zip /tmp/node-linux.tar.xz
+  rm -rf /var/lib/apt/lists/* /tmp/sonar-scanner-cli.zip /tmp/node-linux.tar.gz
 
 WORKDIR /data
 
